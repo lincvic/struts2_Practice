@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ezBookManage:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ezBookManage_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ezBookManage/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ezBookManage" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

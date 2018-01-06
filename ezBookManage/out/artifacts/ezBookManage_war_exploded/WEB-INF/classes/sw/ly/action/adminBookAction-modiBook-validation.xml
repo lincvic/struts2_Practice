@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="bname">
+        <field-validator type="requiredstring">
+            <message>书名不能为空</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">2</param>
+            <message>书籍名长度不能少于2位</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="maxLength">20</param>
+            <message>书籍名长度不能大于20位</message>
+        </field-validator>
+    </field>
+
+    <field name="isbn">
+        <field-validator type="requiredstring">
+            <message>ISBN不能为空</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression">
+                <![CDATA[
+                [0-9]*[-|][0-9]*[-|][0-9]*[-|][0-9]*[-|][0-9]*
+                ]]>
+            </param>
+            <message>ISBN格式错误，应采用ISBN 13格式</message>
+        </field-validator>
+    </field>
+</validators>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <package name="login" extends="struts-default">
+        <action name="doLogin" class="sw.wyj.action.loginAction" method="login">
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/index.jsp</result>
+            <result name="successAdmin">/successAdmin.jsp</result>
+        </action>
+        <action name="doRegist" class="sw.wyj.action.loginAction" method="regist">
+            <result name="registOK">/index.jsp</result>
+            <result name="input">/index.jsp</result>
+        </action>
+    </package>
+
+    <package name="book" extends="struts-default">
+        <action name="*Action" class="sw.wyj.action.bookAction" method="{1}">
+            <result name="addOK" type="chain">findAllAction</result>
+            <result name="findOK">/showBook.jsp</result>
+        </action>
+
+    </package>
+
+</struts>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="carsalesmanagementsystem@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="carsalesmanagementsystem">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="movie"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sakila"/>
+    <schema id="8" parent="1" name="sys"/>
+    <schema id="9" parent="1" name="world"/>
+    <table id="10" parent="2" name="admin"/>
+    <table id="11" parent="2" name="car"/>
+    <table id="12" parent="2" name="client"/>
+    <table id="13" parent="2" name="employee"/>
+    <table id="14" parent="2" name="purchase"/>
+    <table id="15" parent="2" name="sale"/>
+    <view id="16" parent="2" name="detail_sale">
+      <Comment>VIEW</Comment>
+    </view>
+    <view id="17" parent="2" name="purchase_detail">
+      <Comment>VIEW</Comment>
+    </view>
+    <column id="18" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="password">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="21" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="11" name="carid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="11" name="brand">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="11" name="model">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="11" name="price">
+      <Position>4</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="11" name="picture">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="27" parent="11" name="quantity">
+      <Position>6</Position>
+      <DataType>int(8)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="28" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>carid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="12" name="clientid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="12" name="password">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="12" name="phonenumber">
+      <Position>4</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="12" name="address">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="34" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>clientid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="13" name="eid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="13" name="phonenumber">
+      <Position>3</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="38" parent="13" name="totalnum">
+      <Position>4</Position>
+      <DataType>int(15)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="39" parent="13" name="totalprofit">
+      <Position>5</Position>
+      <DataType>int(15)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="40" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>eid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="14" name="pid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="14" name="clientid">
+      <Position>2</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="14" name="sid">
+      <Position>3</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="14" name="purchasedate">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="45" parent="14" name="clientid">
+      <ColNames>clientid
+sid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="46" parent="14" name="sid">
+      <ColNames>sid</ColNames>
+    </index>
+    <key id="47" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="48" parent="14" name="clientid">
+      <ColNames>clientid
+sid</ColNames>
+      <UnderlyingIndexName>clientid</UnderlyingIndexName>
+    </key>
+    <foreign-key id="49" parent="14" name="purchase_ibfk_1">
+      <ColNames>clientid</ColNames>
+      <RefSchemaName>carsalesmanagementsystem</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>clientid</RefColNames>
+    </foreign-key>
+    <foreign-key id="50" parent="14" name="purchase_ibfk_2">
+      <ColNames>sid</ColNames>
+      <RefSchemaName>carsalesmanagementsystem</RefSchemaName>
+      <RefTableName>sale</RefTableName>
+      <RefColNames>sid</RefColNames>
+    </foreign-key>
+    <trigger id="51" parent="14" name="purchase_trigger">
+      <Turn>after-row</Turn>
+      <Events>I</Events>
+    </trigger>
+    <trigger id="52" parent="14" name="return_trigger">
+      <Turn>after-row</Turn>
+      <Events>D</Events>
+    </trigger>
+    <column id="53" parent="15" name="sid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="15" name="eid">
+      <Position>2</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="15" name="carid">
+      <Position>3</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="15" name="profit">
+      <Position>4</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="57" parent="15" name="carid">
+      <ColNames>carid</ColNames>
+    </index>
+    <index id="58" parent="15" name="eid">
+      <ColNames>eid
+carid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="60" parent="15" name="eid">
+      <ColNames>eid
+carid</ColNames>
+      <UnderlyingIndexName>eid</UnderlyingIndexName>
+    </key>
+    <foreign-key id="61" parent="15" name="sale_ibfk_1">
+      <ColNames>eid</ColNames>
+      <RefSchemaName>carsalesmanagementsystem</RefSchemaName>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>eid</RefColNames>
+    </foreign-key>
+    <foreign-key id="62" parent="15" name="sale_ibfk_2">
+      <ColNames>carid</ColNames>
+      <RefSchemaName>carsalesmanagementsystem</RefSchemaName>
+      <RefTableName>car</RefTableName>
+      <RefColNames>carid</RefColNames>
+    </foreign-key>
+    <column id="63" parent="16" name="sid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="16" name="eid">
+      <Position>2</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="16" name="name">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="16" name="phonenumber">
+      <Position>4</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="67" parent="16" name="totalnum">
+      <Position>5</Position>
+      <DataType>int(15)|0</DataType>
+    </column>
+    <column id="68" parent="16" name="totalprofit">
+      <Position>6</Position>
+      <DataType>int(15)|0</DataType>
+    </column>
+    <column id="69" parent="16" name="carid">
+      <Position>7</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="16" name="brand">
+      <Position>8</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="16" name="model">
+      <Position>9</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="16" name="price">
+      <Position>10</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="16" name="picture">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="74" parent="16" name="quantity">
+      <Position>12</Position>
+      <DataType>int(8)|0</DataType>
+    </column>
+    <column id="75" parent="16" name="profit">
+      <Position>13</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="17" name="pid">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="17" name="clientid">
+      <Position>2</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="17" name="cname">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="17" name="sid">
+      <Position>4</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="17" name="eid">
+      <Position>5</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="17" name="ename">
+      <Position>6</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="17" name="carid">
+      <Position>7</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="17" name="brand">
+      <Position>8</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="17" name="model">
+      <Position>9</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="17" name="price">
+      <Position>10</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="17" name="profit">
+      <Position>11</Position>
+      <DataType>int(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="17" name="purchasedate">
+      <Position>12</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+  </database-model>
+</dataSource>

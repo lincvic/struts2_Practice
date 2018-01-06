@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.multipart.saveDir" value="/Users/wong/Desktop/实验"/>
+    <package name="upload" extends="struts-default">
+        <interceptors>
+            <interceptor name="logInterceptor" class="sw.wyj.interceptor.logInterceptor">
+                <param name="name">日志拦截器</param>
+            </interceptor>
+        </interceptors>
+        <action name="uploadAction" class="sw.wyj.action.uploadAction" method="upload">
+            <interceptor-ref name="fileUpload">
+                <param name="allowedExtensions">txt,doc,docx,jpg,png,zip</param>
+
+                <param name="maximumSize">5242800</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+            <param name="savePath">/Users/wong/Desktop/实验</param>
+            <result name="uploadConfirm">/success.jsp</result>
+            <result name="input">/index.jsp</result>
+            <interceptor-ref name="logInterceptor"/>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+    </package>
+    <package name="download" extends="struts-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="sw.wyj.interceptor.loginInterceptor"/>
+        </interceptors>
+        <action name="download" class="sw.wyj.action.download">
+            <result type="stream">
+                <param name="contentType">${contentType}</param>
+                <param name="contentDisposition">attachment;filename="${downFileName}"</param>
+                <param name="inputName">downFile</param>
+            </result>
+            <result name="login">
+               /login.jsp
+            </result>
+            <result name="input">/login.jsp</result>
+            <interceptor-ref name="loginInterceptor"/>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+        <action name="imageAction" class="sw.wyj.action.imageAction">
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">inputStream</param>
+            </result>
+        </action>
+    </package>
+    <package name="login" extends="struts-default">
+        <action name="doLogin" class="sw.wyj.action.loginAction" method="login">
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/login.jsp
+            </result>
+        </action>
+    </package>
+</struts>

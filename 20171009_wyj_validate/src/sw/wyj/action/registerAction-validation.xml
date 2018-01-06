@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+    <field name="email">
+        <field-validator type="email">
+            <message key="email.format"/>
+        </field-validator>
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="email.null"/>
+        </field-validator>
+    </field>
+    <field name="psw">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="psw.null"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">5</param>
+            <message key="psw.min"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="maxLength">12</param>
+            <message key="psw.max"/>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression"><![CDATA[(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)[a-zA-Z0-9]{5,12}]]></param>
+            <message key="psw.reformat"/>
+        </field-validator>
+    </field>
+    <field name="repsw">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="repsw.null"/>
+        </field-validator>
+        <field-validator type="fieldexpression">
+            <param name="expression"><![CDATA[repsw==psw]]></param>
+            <message key="repsw.error"/>
+        </field-validator>
+    </field>
+    <field name="username">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="username.null"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">5</param>
+            <message key="username.min"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="maxLength">12</param>
+            <message key="username.max"/>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression"><![CDATA[[a-zA-Z]{5,12}]]></param>
+            <message key="username.reformat"/>
+        </field-validator>
+    </field>
+    <field name="name">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="name.null"/>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression"><![CDATA[[\u4e00-\u9fa5]{2,5}]]></param>
+            <message key="name.format"/>
+        </field-validator>
+    </field>
+    <field name="phonenum">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message key="phone.null"/>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regexExpression">
+                <![CDATA[[1]\d{10}]]>
+            </param>
+            <message key="phone.format"/>
+        </field-validator>
+    </field>
+</validators>

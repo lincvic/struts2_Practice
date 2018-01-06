@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="adminJump" extends="struts-default">
+        <action name="adminLoginJump" class="sw.ly.action.adminJumpAction" method="adminLoginJump">
+            <result name="success">WEB-INF/adminLogin.jsp</result>
+        </action>
+
+        <action name="adminPanelJump" class="sw.ly.action.adminJumpAction" method="adminPanelJump">
+            <result name="success">WEB-INF/adminPanel.jsp</result>
+        </action>
+
+        <action name="adminAddBookJump" class="sw.ly.action.adminJumpAction" method="adminAddBookJump">
+            <result name="success">WEB-INF/addBookPanel.jsp</result>
+        </action>
+    </package>
+
+    <package name="amdminBook" extends="struts-default">
+        <action name="getAllBook" class="sw.ly.action.adminBookAction" method="getAllBook">
+            <result name="success">WEB-INF/adminBookPanel.jsp</result>
+            <result name="getAllBookFail">WEB-INF/adminPanel.jsp</result>
+        </action>
+
+        <action name="addBook" class="sw.ly.action.adminBookAction" method="addBook">
+            <result name="success">WEB-INF/addBookComplete.jsp</result>
+            <result name="addBookFail">WEB-INF/addBookPanel.jsp</result>
+            <result name="input">WEB-INF/addBookPanel.jsp</result>
+        </action>
+
+        <action name="modiBookJump" class="sw.ly.action.adminBookAction" method="modiBook_Jump">
+            <result name="success">WEB-INF/modiBookPanel.jsp</result>
+        </action>
+
+        <action name="modiBook" class="sw.ly.action.adminBookAction" method="modiBook">
+            <result name="success">WEB-INF/modiBookComplete.jsp</result>
+            <result name="input">WEB-INF/modiBookPanel.jsp</result>
+            <result name="modiBookFail">WEB-INF/modiBookPanel.jsp</result>
+        </action>
+
+        <action name="delBook" class="sw.ly.action.adminBookAction" method="delBook">
+            <result name="success">WEB-INF/delBookComplete.jsp</result>
+            <result name="delBookFail">WEB-INF/adminPanel.jsp</result>
+        </action>
+
+    </package>
+
+    <package name="adminLogin" extends="struts-default">
+        <action name="adminLogin" class="sw.ly.action.adminLoginAction" method="adminLogin">
+            <result name="success">WEB-INF/adminPanel.jsp</result>
+            <result name="input">WEB-INF/adminLogin.jsp</result>
+            <result name="adminLoginFail">WEB-INF/adminLogin.jsp</result>
+        </action>
+    </package>
+
+
+</struts>
