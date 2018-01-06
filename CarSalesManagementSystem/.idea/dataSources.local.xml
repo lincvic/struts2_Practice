@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal">
-    <data-source name="carsalesmanagementsystem@localhost" uuid="9e54ff7e-1085-411e-8d24-6dd229b0c9f8">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <introspection-schemas>*:carsalesmanagementsystem</introspection-schemas>
-    </data-source>
-  </component>
-</project>
